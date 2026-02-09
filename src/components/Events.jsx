@@ -7,7 +7,7 @@ const Events = memo(() => {
   const events = [
     {
       title: "Git Arcana",
-      date: "18th February 2026",
+      date: "17th February 2026",
       team: "Solo/Duo",
       description: "Dive into the depths of version control like never before. Teams receive custom GitHub repositories filled with mysteries, hunt for clues hidden in commit messages, pull request labels, secret files, and code history. Decode the archives, connect the dots, and unravel the ultimate secret to claim victory!",
       status: 'open',
@@ -18,7 +18,7 @@ const Events = memo(() => {
     },
     {
       title: "Decipher",
-      date: "17th February 2026",
+      date: "18th February 2026",
       team: "Solo/Duo",
       description: "A dynamic decryption challenge that tests participants' problem-solving skills. In Round 1, individuals tackle encryption-based questions, while Round 2 presents interconnected puzzles hidden within QR-coded images. The quickest to decode all challenges emerges as winner!",
       status: 'open',

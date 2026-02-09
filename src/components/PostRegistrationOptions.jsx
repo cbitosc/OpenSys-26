@@ -16,9 +16,9 @@ const PostRegistrationOptions = ({ onRegisterAnother, eventType = 'odyssey' }) =
 
   // Different WhatsApp groups for different events
   const WHATSAPP_GROUPS = {
-    odyssey: "https://chat.whatsapp.com/Lqmr9QXhPdXDbN3TaJpvZM",
-    decipher: "https://chat.whatsapp.com/BkYAQWYc54ALvUDmzeZvRu",
-    gitarcana: "https://chat.whatsapp.com/Boy1dpjLak99OAiZxyw3JK"
+    odyssey: "https://chat.whatsapp.com/CSsZhiNwlpZKbu9IKkI17U",
+    decipher: "https://chat.whatsapp.com/BRGgdUWcUNdF2qqrVKkhA4",
+    gitarcana: "https://chat.whatsapp.com/K8kVfkuqR8oJThBghDnZEg"
   };
 
   const WHATSAPP_GROUP_LINK = WHATSAPP_GROUPS[eventType] || WHATSAPP_GROUPS.odyssey;
