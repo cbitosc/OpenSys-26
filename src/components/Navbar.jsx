@@ -196,14 +196,21 @@ const Navbar = () => {
             {navLinks.map(([label, target]) => (
               <a
                 key={target}
-                href="#"
+                href={`#${target}`}
                 onClick={(e) => {
                   e.preventDefault();
+                  e.stopPropagation();
                   handleNavigation(target);
                 }}
-                className={`nav-link text-purple-200 hover:text-white hover:bg-white/5 active:bg-white/10 px-4 py-3 rounded-lg text-sm transition-all duration-300 relative group block ${
+                onTouchEnd={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  handleNavigation(target);
+                }}
+                className={`nav-link text-purple-200 hover:text-white hover:bg-white/5 active:bg-white/10 px-4 py-3 rounded-lg text-sm transition-all duration-300 relative group block touch-manipulation ${
                   activeId === target ? "is-active" : ""
                 }`}
+                style={{ WebkitTapHighlightColor: 'transparent' }}
               >
                 <span className="nav-label relative z-10">{label}</span>
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-violet-400/15 to-transparent opacity-0 group-hover:opacity-100 blur-md transition-opacity duration-300 rounded-lg -z-10"></span>
