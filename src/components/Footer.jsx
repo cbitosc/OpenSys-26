@@ -172,10 +172,7 @@ const Footer = memo(() => {
           </div>
         </div>
 
-        <div className="footer-bottom">
-          <div className="footer-divider" />
-          <p>© 2026 OpenSys — CBIT Open Source Community</p>
-        </div>
+        
       </motion.div>
     </footer>
   );
