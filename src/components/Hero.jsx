@@ -14,7 +14,7 @@ export default function Hero() {
   const eyebrowText = 'Open Source Symposium';
   const [typedText, setTypedText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
-  const targetDate = useMemo(() => new Date(Date.UTC(2026, 1, 14, 18, 30, 0)), []);
+  const targetDate = useMemo(() => new Date(Date.UTC(2026, 1, 16, 12, 30, 0)), []);
   const [timeLeft, setTimeLeft] = useState({ days: '00', hours: '00', minutes: '00', seconds: '00' });
 
   useEffect(() => {
