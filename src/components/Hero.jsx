@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { motion, useReducedMotion, AnimatePresence } from 'motion/react';
+import { useReducedMotion } from 'motion/react';
 import gsap from 'gsap';
 
 export default function Hero() {
@@ -14,32 +14,7 @@ export default function Hero() {
   const eyebrowText = 'Open Source Symposium';
   const [typedText, setTypedText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
-  const targetDate = useMemo(() => new Date(Date.UTC(2026, 1, 16, 12, 30, 0)), []);
-  const [timeLeft, setTimeLeft] = useState({ days: '00', hours: '00', minutes: '00', seconds: '00' });
 
-  useEffect(() => {
-    const updateCountdown = () => {
-      const now = new Date();
-      const diff = Math.max(0, targetDate.getTime() - now.getTime());
-
-      const totalSeconds = Math.floor(diff / 1000);
-      const days = Math.floor(totalSeconds / 86400);
-      const hours = Math.floor((totalSeconds % 86400) / 3600);
-      const minutes = Math.floor((totalSeconds % 3600) / 60);
-      const seconds = totalSeconds % 60;
-
-      setTimeLeft({
-        hours: String(hours).padStart(2, '0'),
-        days: String(days).padStart(2, '0'),
-        minutes: String(minutes).padStart(2, '0'),
-        seconds: String(seconds).padStart(2, '0')
-      });
-    };
-
-    updateCountdown();
-    const interval = setInterval(updateCountdown, 1000);
-    return () => clearInterval(interval);
-  }, [targetDate]);
 
   useEffect(() => {
     if (!titleRef.current) return;
@@ -117,50 +92,14 @@ export default function Hero() {
         </h1>
 
         <div className="mt-8 w-full">
-          <p className="mb-4 text-center text-sm font-semibold uppercase tracking-wider text-purple-300">
-            Registrations Close In
-          </p>
-          <div className="mx-auto flex w-full max-w-3xl flex-nowrap justify-between gap-2 sm:justify-center sm:gap-4 md:gap-6">
-            {[
-              { label: 'Days', value: timeLeft.days },
-              { label: 'Hours', value: timeLeft.hours },
-              { label: 'Minutes', value: timeLeft.minutes },
-              { label: 'Seconds', value: timeLeft.seconds }
-            ].map(({ label, value }) => (
-              <div
-                key={label}
-                className="flex h-24 w-20 flex-col items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-2 py-3 text-center backdrop-blur-sm transition-all duration-300 hover:border-violet-400/40 hover:bg-white/10 sm:h-28 sm:w-24 sm:px-3 sm:py-4 md:h-32 md:w-28 lg:h-36 lg:w-32"
-              >
-                <div className="relative h-10 w-full flex items-center justify-center overflow-hidden sm:h-12 md:h-14 lg:h-16">
-                  {reduceMotion ? (
-                    <span className="font-mono text-2xl font-bold text-white tabular-nums sm:text-3xl md:text-4xl lg:text-5xl">
-                      {value}
-                    </span>
-                  ) : (
-                    <AnimatePresence mode="popLayout" initial={false}>
-                      <motion.div
-                        key={value}
-                        className="absolute inset-0 flex items-center justify-center"
-                        initial={{ y: 60 }}
-                        animate={{ y: 0 }}
-                        exit={{ y: -60 }}
-                        transition={{ 
-                          duration: 0.6, 
-                          ease: [0.33, 1, 0.68, 1]
-                        }}
-                      >
-                        <span className="font-mono text-2xl font-bold text-white tabular-nums sm:text-3xl md:text-4xl lg:text-5xl">
-                          {value}
-                        </span>
-                      </motion.div>
-                    </AnimatePresence>
-                  )}
-                </div>
-                <span className="mt-1 text-[9px] font-semibold uppercase tracking-widest text-gray-400 sm:mt-1.5 sm:text-xs">
-                  {label}
-                </span>
-              </div>
-            ))}
+          <div className="mx-auto flex max-w-2xl flex-col items-center justify-center rounded-2xl border border-red-500/20 bg-blue-500/5 px-6 py-6 backdrop-blur-sm">
+            <span className="mb-2 text-3xl"></span>
+            <p className="text-lg font-bold uppercase tracking-wider text-red-400 sm:text-xl">
+              Registrations Closed
+            </p>
+            <p className="mt-2 text-sm text-white/50">
+              Thank you for your interest! See you at the event.
+            </p>
           </div>
         </div>
 
@@ -173,14 +112,9 @@ export default function Hero() {
             href="#events"
             className="btn-primary btn-primary-dark w-full px-10 py-3.5 text-center sm:w-auto"
           >
-            <span>Register Now</span>
+            <span>View About Events</span>
           </a>
-          <a
-            href="#about"
-            className="btn-secondary w-full px-10 py-3.5 text-center sm:w-auto"
-          >
-            <span>View Schedule</span>
-          </a>
+          
         </div>
       </div>
     </section>

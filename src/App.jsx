@@ -1,5 +1,5 @@
 import { Suspense, lazy, useEffect, useRef, useState } from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { motion, useInView, useReducedMotion } from "motion/react";
@@ -12,10 +12,6 @@ import Footer from "./components/Footer";
 import BeautifulBackground from "./components/Animations/BeautifulBackground";
 import WillemLoading from "./components/WillemLoading";
 
-// Placeholder registration components - we'll create these next
-import GitarcanaRegistration from "./components/Registrations/GitarcanaRegistration";
-import DecipherRegistration from "./components/Registrations/DecipherRegistration";
-import OdysseyRegistration from "./components/Registrations/OdysseyRegistration";
 
 const Gallery = lazy(() => import("./components/Gallery"));
 
@@ -120,9 +116,7 @@ function App() {
 
             <Routes>
               <Route path="/" element={<HomePage />} />
-              <Route path="/register/gitarcana" element={<GitarcanaRegistration />} />
-              <Route path="/register/decipher" element={<DecipherRegistration />} />
-              <Route path="/register/odyssey" element={<OdysseyRegistration />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </div>
         </div>
