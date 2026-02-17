@@ -95,10 +95,10 @@ export default function Hero() {
           <div className="mx-auto flex max-w-2xl flex-col items-center justify-center rounded-2xl border border-red-500/20 bg-blue-500/5 px-6 py-6 backdrop-blur-sm">
             <span className="mb-2 text-3xl"></span>
             <p className="text-lg font-bold uppercase tracking-wider text-red-400 sm:text-xl">
-              Registrations Closed
+              Decipher and Git Arcana registrations have closed.
             </p>
             <p className="mt-2 text-sm text-white/50">
-              Thank you for your interest! See you at the event.
+              To register for Odyssey, click the link below
             </p>
           </div>
         </div>
@@ -109,10 +109,10 @@ export default function Hero() {
 
         <div className="mt-7 flex w-full flex-col items-center justify-center gap-4 sm:w-auto sm:flex-row">
           <a
-            href="#events"
+            href="https://opensys26-odyssey.vercel.app/signup"
             className="btn-primary btn-primary-dark w-full px-10 py-3.5 text-center sm:w-auto"
           >
-            <span>View About Events</span>
+            <span>Register for Odyssey</span>
           </a>
           
         </div>
